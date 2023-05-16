@@ -39,8 +39,21 @@ Ich schicke c1 & c2, wenn error, dann m1 (da c1&c2 nicht gleich), ansonten
 m0, mit Vorteil 1
 
 3.)
+bei c2 wird IV verwendet
+bei m wird IV mit c2 verwendet
 
+Zweimal gleiche Nachricht m = 000 hinschicken
+c_1_1 = Fk(IV_1)
+c_2_1 = Fk(m) xor IV_1
 
+c_1_2 = FK(IV_2)
+c_2_2 = Fk(m) xor IV_2
 
+c_2_1 xor c_2_2 = IV_1 xor IV_2 //m kürzt sich raus
+
+Decrypt:
+IV = Fk⁻¹(c_1_1)
+m = Fk⁻¹(c_2_1 xor c_2_2 xor IV_1) = Fk⁻¹(IV_2)
+Fk(m) = IV_2
 
 
