@@ -12,11 +12,35 @@ Pr[b'=1|b=1] = 1
 Pr[b'=1|b=0] = 0
 => Vorteil = 1
 
-1.)
-m0 = 000...0
-m1 = 111...1
-
 Da nur xor verändern sich stellen nicht.
 Wir senden beide Nachrichten an den Challender.
 Wir ändern 1 bit bei output und lassen entschlüsseln.
 Wir sehen anhand von stelle welche nachricht verschlüsselt wurde.
+
+
+1.)
+Ciphertext wird erst für 2. Plaintext verwendet.
+Nachricht aus zwei Blöcken:
+c0 = 0000 0000
+c1 = 1111 1111
+
+
+m0 = 0000 1111
+m1 = 0000 0000
+
+Da 2. sich zweiter Nachrichtenteil unterscheidet sehe ich im zweiten Block
+welche Nachricht verwendet wurde
+
+2.)
+m0 = 000 m1 = 111
+m0 = 000 m1 = 001
+
+Ich schicke c1 & c2, wenn error, dann m1 (da c1&c2 nicht gleich), ansonten
+m0, mit Vorteil 1
+
+3.)
+
+
+
+
+
