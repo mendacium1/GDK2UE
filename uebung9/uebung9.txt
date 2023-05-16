@@ -13,5 +13,10 @@ Pr[b'=1|b=0] = 0
 => Vorteil = 1
 
 1.)
-Padding Oracle-Angriff
+m0 = 000...0
+m1 = 111...1
 
+Da nur xor verändern sich stellen nicht.
+Wir senden beide Nachrichten an den Challender.
+Wir ändern 1 bit bei output und lassen entschlüsseln.
+Wir sehen anhand von stelle welche nachricht verschlüsselt wurde.
