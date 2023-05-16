@@ -1,0 +1,45 @@
+1.)
+da und-operation gibt es 75% 0en und 25% 1en
+Vorhersehbarkeit:
+  immer auf 0 tippen
+Sicherheit:
+  wo mehr nullen, da auf G' tippen
+  Vort: 0.75 - 0.5 = 0.25
+
+2.)
+Vorhersehbarkeit:
+  Bis länge von k geben lassen, danach über bekannte funktion f(k) restlichen stellen vorhersehen
+  Vort: 1 - 0.5 = 0.5
+Sicherheit:
+  Testen ob ersten bits bis länge von k über funktion mit restlichen Bits zusammen passt, wenn ja
+  auf G' tippen
+  Vort: 1 -  2^len(k)/2^n = ...
+
+3.)
+Zwei Nachrichten senden, eine lauter 0er -> anschließend sieht man welche nachricht verschl. wurde.
+
+
+# Da k bekannt wiederholt sicher verschlüsselung
+# Man kann für m bis länge k lauter 0en und kennt somit k (da xor)
+Vort: 1
+
+4.)
+Wenn 0 am Ende 50% das man richtig tippt
+Wenn 1 am Ende 100% das man richtig tippt
+
+5.)
+m11 = 00
+m12 = 11
+
+m21 = 01
+m22 = 11
+
+Zweimal zwei nachrichte paare senden (m11&m12 und m21&m22),
+wenn gleicher output wurde m12/m22 verschlüsselt sonst m11/m21
+Vort: 1
+
+
+6.) argon2
+  a) Hohe Anzahl an iteration (iterationen über den speicher)
+  b) argon2 testsalt -t 52 -m 16 
+  c)  2^((n+1)/2) = 2^((128+1)/2) = 2.6087635650665566e+19

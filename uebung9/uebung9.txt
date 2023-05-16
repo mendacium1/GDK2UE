@@ -1,0 +1,17 @@
+0.)
+Chosen Ciphertext-Angriff
+m0 = 000...0
+m1 = 111...1
+=> c= (IV, z) z...Chiffrat
+c' = (IV, z xor 100...0)
+
+Entweder m' = 100000... => b = 0
+oder     m' = 011111... => b = 1
+
+Pr[b'=1|b=1] = 1
+Pr[b'=1|b=0] = 0
+=> Vorteil = 1
+
+1.)
+Padding Oracle-Angriff
+
