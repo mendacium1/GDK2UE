@@ -56,4 +56,16 @@ IV = Fk⁻¹(c_1_1)
 m = Fk⁻¹(c_2_1 xor c_2_2 xor IV_1) = Fk⁻¹(IV_2)
 Fk(m) = IV_2
 
+4.)
+E_k = ________
+        xor
+c   = ________
+        ->
+      ________ = p (mit 0x00 an letzter stelle)
+
+Wir streichen letztes Byte weg.
+Wir können durchtesten bis wir wieder 00 haben (Server approved)
+und wissen somit was an letzter stelle gestanden ist.
+-> Worst case: 256 Möglichkeiten testen
+
 
