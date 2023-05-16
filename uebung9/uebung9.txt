@@ -68,4 +68,12 @@ Wir können durchtesten bis wir wieder 00 haben (Server approved)
 und wissen somit was an letzter stelle gestanden ist.
 -> Worst case: 256 Möglichkeiten testen
 
+5.)
+Vorgang von 4 wiederholen
+Anfrangen im worst-case: 256*n
 
+
+6.)
+Wir können wieder am letzten Byte von Ciphertext ermitteln was das korrekte Byte ist.
+Diesmal verändern wir bis wir eben ein 0x00 haben, wissen dann was das korrekte byte wäre
+Dadurch können wir uns wieder durch alle bytes durcharbeiten.
