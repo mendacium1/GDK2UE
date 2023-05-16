@@ -1,0 +1,41 @@
+0.)
+1/(2^n)
+
+Vort = 1 - 1 / (2^n)
+zwei mal gleiche antwort, wodurch sich die ausgabe nach der mitte wiederholt
+
+1.)
+zwei mal gleiche nachricht, dadurch wird zweimal selber output xor'd -> lauter nuller
+1/(2^n)
+Vor = 1 - 1 / (2^n) -> es könnte eben auch zufällig mal lauter nullen ausgeben
+
+2.)
+man hat 4 möglichkeiten für input, erste stelle frei wählbar
+F'(x y) = F(_ x) xor F(_ y)
+F'(0 1) = F(0 0) xor F(1 1)
+F'(0 0) = F(0 0) xor F(1 0)
+F'(1 0) = F(0 1) xor F(1 0)
+F'(1 1) = F(0 1) xor F(1 1)
+
+um Vorteil zu steigern kann dies forgehend wiederholt werden
+
+Vort = 1 - 1 / (2^n)
+
+3.)
+Sichere solange Basis F sicher (solage F sicher ist, ist F' sicher)
+Angreifer würde xor x wieder wegmachen, da er x kennt, dadurch ist F'=F und solange F sicher ist, ist F' sicher
+
+4.)
+Nicht sicher
+F'(x) xor x ist G(k)
+Vort = 1 - 1 / (2^n)
+
+5.)
+Permutation bedeutet bei gleicher eingabe gleiche ausgabe aber kann niemals bei unterschiedlicher eingabe gleiche ausgabe liefern und umgekehrt
+2^128! -> alle Permutationen
+Anzahl der Funktionen:
+2^128^2^128
+AES -> 2^128
+
+6.)
+

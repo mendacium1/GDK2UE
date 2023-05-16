@@ -1,0 +1,33 @@
+1. Aufgabe
+Tu es für mich
+XOR
+0xbc61405a8e660aa126a0d5ee932e
+=
+key:
+0xe814603ffd466c5d5480b887f046
+
+Tu es nicht!!!
+XOR
+key
+=
+0xbc61405a8e66023437e8cca6d167
+
+
+
+2. Aufgabe
+cipher:
+0x 09 08 1a 1a 45 53 3d 13 08 43 01 53 33 4f 10 11 48 00 1b 08 1d 07 11 52 55 18 1c 52 2f 00 07 52
+xor (Vers 26.)
+Dann sprach Gott: Lasst uns Menschen machen als unser Bild, uns ähnlich! Sie sollen walten über die Fische des Meeres, über die Vögel des Himmels, über das Vieh, über die ganze Erde und über alle Kriechtiere, die auf der Erde kriechen.
+
+
+3. Aufgabe
+Hallo
+AND
+key:
+0xdfb1d0c9b2
+-> kann durch key nicht entschlüsselt werden -> nicht gut
+
+4. Aufgabe
+a) beim bruteforcen gleicher aufwand, beide keys zusammen xor ergeben einen key (welche gebruteforced wird)
+b) man kommt wieder auf den klartext (die eingabe)

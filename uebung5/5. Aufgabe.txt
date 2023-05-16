@@ -1,0 +1,28 @@
+0.)
+Man kann x und y xor'n, dann bekommt man m
+Vorteil: 1
+
+1.)
+Bei einer Nachricht verändert sich der output nicht, da IV negiert wird.
+Vorteil: 1
+
+2.)
+2 Nachrichten mit unterschiedlicher Anzahl an 0er und 1er.
+1er unnd 0er zählen und dadurch kann ich festellen, welche Nachricht es ist.
+
+3.)
+(a) Alle Blöcke werden verändert -> es ist nichts zu erkennen.
+(b) Wenn in einem inneren Block (nicht Endblock) das letzte Bit verändert wird, so ist im nächsten Block ebenfalls das letzte Bit verändert.
+
+4.)
+(a) Wenn ciphertext ident, dann wissen wir input war gleich
+	Da im letzten Block ein padding stattfindet können wir sagen wie lange die Nachricht war.
+(b) Wieder selber output, dann war selber input
+	Da counter hochzählt können wir wenn wir bei beiden nachrichten die bits vergleichen, festellen welche bits gleich sind und somit sagen, dass gleiche richtig sind.
+
+5.)
+C = p xor IV xor k
+
+Wenn p = 0000 xor IV = IV
+Wir bei zwei nachrichten haben wir dann zwei keys, somit können wir einfach testen welcher richtig ist.
+

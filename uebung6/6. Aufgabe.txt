@@ -1,0 +1,50 @@
+0)
+    Ich nehme einen Input x, welcher länger ist als die Länge n.
+    H(x) -> y (mit einer Länge von n bits)
+    wenn ich jetzt H(y) mache, kommt ebenfalls y raus H(y)=y == H(x)
+
+1)
+    gleich wie 0er, nur mit XOR.
+    Die Anzahl der möglichen Outputs ändert sich ja nicht. Es wird nur der Input mit XOR verknüpft und danach gehasht.
+    H(x) = y (wobei x länger als n)
+    H(y) = y XOR m = z
+    H(z) = z XOR m = y (XOR hebt m wieder auf)
+
+2. 
+Kollision von H^(t)(x) ist auch eine Kollision von H(x), da die Kollision ja nur immer mit sich selbst gehashed wird.
+    H^t = H(x)    
+    H^t ist im Prinzip H(x), nur öfters wiederholt. Kenne ich also eine Kollision von H^t, kann ich daraus auf H(x) zurückschließen 
+    
+    Alle Kombinationen von H(H(H(x))) (und so weiter) sind eigentlich auch nur ein möglicher Input von H(x), da die inneren ja auch nur irgendeinen Wert ergeben, welcher dann gehasht wird.
+    Somit kann ich, wenn ich eine Kollision von H^t(x) kenne
+    H^t(x1) = H(y1)
+    H^t(x2) = H(y2)
+    H(y1) == H(y2)
+
+
+3.
+Wenn ich nach erstem Block H bekomme kann ich als x H wählen und bekomme somit wieder 0 heraus.
+
+Bei einem Block bekommen ich als output o den Hash H von meinem input m.
+
+	o1 = H(m) = H(0101 0101)
+
+Bei zwei Blöcken kann ich nun mit dem ouput o starten und im zweiten block dem gleichen input xorn und bekommen somit 0 was somit gehasht wird
+-> es wird zweimal 0 gehashed -> kollision
+
+	H'(x) = H(o1 || m)
+
+Die kann ich noch mit einem zweiten Wert machen welcher im Ende wieder ein Hash von 0 ist.
+
+4.
+PRPs garantieren keine Kollisionsresitent bei unterschiedl. Schlüsseln.
+PRPs sind reversibel -> deshalb jeder wert zu jedem schlüssel
+es kann somit ein wert errechnet werden und anschließend mit anderm schlüssel gebruteforced werden.
+
+5.
+Powershell:
+Get-FileHash .\Downloads\shattered-1.pdf -Algorithm SHA1
+Get-FileHash .\Downloads\shattered-2.pdf -Algorithm SHA1
+
+6.
+

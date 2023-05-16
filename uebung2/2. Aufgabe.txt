@@ -1,0 +1,60 @@
+0.) 
+    Bei bitwise AND jedes zweite eine Null
+        -> G'(k) = g0 0 g2 0 g4 0 g6 ...
+    Pr [b'=1 | b=1] = 1
+    Pr [b'=1 | b=0] = 1/(2^4)
+    Vort: 1 - 1/16 = 15/16
+
+1.)
+    G'(k) = G(k) v 101010101010101010101010
+        -> G'(k) = 1 g2 1 g3 1 g5 1 g7 1 g9 ...
+    Jedes zweite ist fix 1.
+    Angreifer sagt b'=1
+    Pr[b'=b1]=1 (100%)
+    Vort(Angreifer) [A, G'] = 1 - 1/2 = 1/2
+
+2.)
+    G′(k) = FromInt( FirstByteToInt(G(k)) mod 199 )
+
+    11001100 -> ganze Zahl (int)
+    -> es kommen nur zahlen von 0-199 (exkl.) raus
+    
+    Wsk (zufällige Zahl zwischen 0 und 199 (exkl.) (alles darüber ist fix nicht Generator)) = 198/255 ~ 78%
+    Vort. = 1 - 0,78 = 0,22
+
+
+3.)
+    Wsk, dass 10 Bits hintereinander gleich sind:
+    
+    111111111101111
+    011111111110111
+    001111111111011
+    0001111111111
+    000111111011100
+    Wsk, dass bit danach auch noch gleich ist: + 1/2
+    Wenn 0 an Stelle 10:
+        -> Chance, dass ursprünglich 10 1er nebeneinander waren: 7/2^16
+    Wenn 1 an Stelle 10:
+        -> Chance, dass ursprünglich 10 0er nebeneinander waren: 7/2^16
+    -> 14/2^16 ist die Chance, dass 10 gleiche hintereinander waren
+    Chance 0,5, dass 10. Bit trotzdem anders ist.
+
+    
+    10 gleiche und an der 10. Stelle nicht geflippt.
+    Wir schauen jetzt wie sich die restlichen 6 bit vehalten:
+    Alle Fälle wo fix nicht Generator 2^6 * 2 (0 und 1)
+    Und durch 2^16 -> 0,001953125 % -> Zufall
+    Vorteil: 0,0019.. + 0,5 = 0,5001953125 
+
+4.) Ein Bit macht keinen Unterschied ab einer gewissen Länge
+    Satz aus GDKVO einfügen
+    Vorteil = 0,5 - 0,5 = 0
+
+5.) Bei G1 bekommt man, wenn man sich u || v anzeigen den Schlüssel für den Generator G. Damit kann man x&y berechnen und somit auch den Rest berechnen und vorhersagen
+    Bei G2 kennen wir u und x, bringt allerdings nichts, da wir keinen Schlüssel haben. Und u und x ist nur ein Teil des Outputs.
+
+    Vorteil:Wenn ich bei G1 die Hälfte hab, dann kann ich mit 100% vorausbestimmen.
+            Bei G2 muss ich bestimmen, wie Wahrscheinlich, dass perfekter Generatoroutput.
+
+6.) aufgabe6.out
+
