@@ -49,12 +49,33 @@ c_2_1 = Fk(m) xor IV_1
 c_1_2 = FK(IV_2)
 c_2_2 = Fk(m) xor IV_2
 
-c_2_1 xor c_2_2 = IV_1 xor IV_2 //m kürzt sich raus
+
+c_2_1 xor 1 = new_c_2_1
+c_2_2 xor 1 = new_c_2_2
+
 
 Decrypt:
-IV = Fk⁻¹(c_1_1)
-m = Fk⁻¹(c_2_1 xor c_2_2 xor IV_1) = Fk⁻¹(IV_2)
-Fk(m) = IV_2
+IV_1 = Fk^-1(c_1_1)
+m' = Fk^-1(c_2_1 xor 1 xor IV_1)
+
+IV_2 = Fk^-1(c_1_2)
+m' = Fk^-1(c_2_2 xor 1 xor IV_2)
+
+
+Im Anschluss 2 unterschiedliche Nachrichten
+ebenfalls wieder ein bit flippen, dadurch erkennt man ob Variante a oder b
+
+
+
+
+#    c_2_1 xor c_2_2 = IV_1 xor IV_2 //m kürzt sich raus
+#
+#    Decrypt:
+#    IV_1 = Fk⁻¹(c_1_1)
+#    m = Fk⁻¹(c_2_1 xor c_2_2 xor IV_1) =
+#      = Fk^-1(IV_1 xor IV_2 xor IV_1) = Fk⁻¹(IV_2)
+#
+#    E'_k(m) = IV_2
 
 4.)
 E_k = ________
