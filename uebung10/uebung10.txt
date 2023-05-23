@@ -6,7 +6,20 @@ Indem der Angreifer nach und nach mehrere kurzlebige RSA-Schlüssel erfasst und 
 
 Das grundlegende Prinzip von RSA besteht darin, dass die Primfaktoren des öffentlichen Schlüssels geheim gehalten werden müssen. Durch die Wiederverwendung eines Primfaktors in aufeinanderfolgenden Schlüsseln wird dieses Prinzip verletzt und die Sicherheit des Systems wird kompromittiert. Daher ist es nicht ratsam, diese Vorgehensweise zu verwenden.
 
+5.)
+7900^15548 mod 71
+ggT(a,p) = 1
+15548 = 70 * q + r
+15548 = 70 * 222 + 8
+
+7900^(15548) mod 71 = 7900^(70*222+8) mod 71
+= 7900^8 mod 71 = 18
 
 
+987654321^29333339 mod 541
+29333339 = 540 * q + r
+29333339 = 540 * 54320 + 539
 
+987654321^29333339 mod 541 = 987654321^(540*54320+539) mod 541
+= 987654321^539 mod 541 = 106
 
