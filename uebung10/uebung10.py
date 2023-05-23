@@ -133,18 +133,21 @@ import subprocess
 # Öffentlicher Schlüssel und Chiffrat
 public_key_file = 'pubkey.pem'
 chiffrat_file = 'c'
+bruteforce_file = 'bf_file'
+
 
 # Brute-Force-Schleife für dreistelligen Statuscode
-for code in range(100, 1000):
-    code_str = str(code).encode('ascii')
-    command = f'echo -n "{code_str}" | openssl rsautl -encrypt -inkey {public_key_file} -pubin -out {chiffrat_file} -raw'
-    subprocess.run(command, shell=True)
+for code in range(0, 1000):
+    code_str = str(code)
+    command = f'printf %0256d {code_str} | openssl rsautl -encrypt -inkey {public_key_file} -pubin -out {bruteforce_file} -raw'
+    print(f"Trying code: {code_str}")
+    subprocess.run(command, shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
     
     with open(chiffrat_file, 'rb') as f:
         chiffrat = f.read()
 
     # Überprüfen, ob das Chiffrat mit dem ursprünglichen Chiffrat übereinstimmt
-    if chiffrat == open(chiffrat_file, 'rb').read():
+    if chiffrat == open(bruteforce_file, 'rb').read():
         print(f'Brute-Force erfolgreich! Statuscode: {code}')
         break
 
