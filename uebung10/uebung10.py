@@ -125,4 +125,26 @@ print("2. Encrypted message:", c)
 print("2. Decrypted message:", m2)
 
 
+"""
+6.) Bruteforce
+"""
+import subprocess
+
+# Öffentlicher Schlüssel und Chiffrat
+public_key_file = 'pubkey.pem'
+chiffrat_file = 'c'
+
+# Brute-Force-Schleife für dreistelligen Statuscode
+for code in range(100, 1000):
+    code_str = str(code).encode('ascii')
+    command = f'echo -n "{code_str}" | openssl rsautl -encrypt -inkey {public_key_file} -pubin -out {chiffrat_file} -raw'
+    subprocess.run(command, shell=True)
+    
+    with open(chiffrat_file, 'rb') as f:
+        chiffrat = f.read()
+
+    # Überprüfen, ob das Chiffrat mit dem ursprünglichen Chiffrat übereinstimmt
+    if chiffrat == open(chiffrat_file, 'rb').read():
+        print(f'Brute-Force erfolgreich! Statuscode: {code}')
+        break
 
