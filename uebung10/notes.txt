@@ -1,3 +1,0 @@
-1-2-3-5 = wiederholung aus 1. Semester
-Für 1-2: nicht nur jupyter notebook sondern auch überlegen
-wie man es mit der Hand rechnen würde
