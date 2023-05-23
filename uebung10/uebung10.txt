@@ -1,0 +1,12 @@
+4.)
+Schlüsselkomprimitierung!
+RSA basiert auf der Schwierigkeit, große Zahlen in ihre Primfaktoren zu zerlegen. Die Sicherheit von RSA hängt davon ab, dass es sehr schwierig ist, den privaten Schlüssel (die Primfaktoren) aus dem öffentlichen Schlüssel abzuleiten. Wenn jedoch ein Angreifer einen der kurzlebigen RSA-Schlüssel erfasst und den zugehörigen Primfaktor extrahiert, kann er den anderen Primfaktor ableiten, da dieser vom vorherigen Schlüssel übernommen wird.
+
+Indem der Angreifer nach und nach mehrere kurzlebige RSA-Schlüssel erfasst und die Primfaktoren ableitet, kann er die Sicherheit des gesamten Systems gefährden. Sobald der Angreifer beide Primfaktoren kennt, kann er den privaten Schlüssel berechnen und die verschlüsselten Daten entschlüsseln, die mit den öffentlichen Schlüsseln dieses Zertifizierungsdienstes verschlüsselt wurden.
+
+Das grundlegende Prinzip von RSA besteht darin, dass die Primfaktoren des öffentlichen Schlüssels geheim gehalten werden müssen. Durch die Wiederverwendung eines Primfaktors in aufeinanderfolgenden Schlüsseln wird dieses Prinzip verletzt und die Sicherheit des Systems wird kompromittiert. Daher ist es nicht ratsam, diese Vorgehensweise zu verwenden.
+
+
+
+
+
