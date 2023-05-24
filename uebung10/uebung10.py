@@ -141,6 +141,7 @@ bruteforce_file = 'bf_file'
 
 
 # Brute-Force-Schleife für dreistelligen Statuscode
+# ohne 00x und 0xx
 for code in range(0, 1000):
     code_str = str(code)
     command = f'printf %0256d {code_str} | openssl rsautl -encrypt -inkey {public_key_file} -pubin -out {bruteforce_file} -raw'
