@@ -56,7 +56,7 @@ Zeugen:
 
 4/24 = 1/8
 
-2,5,7,11,13,17,19,23
+#2,5,7,11,13,17,19,23
 
 
 
@@ -84,5 +84,7 @@ time openssl prime -generate -bits 8192 - 42s
 time openssl prime -generate -bits 8193 - 64.39s
 
 6.)
+https://github.com/openssl/openssl/blob/master/crypto/bn/bn_prime.c
 Womöglich wäre "-checks num" dafür da, in der man-page steht aber "This parameter is ignored"
+Zeile 88 - 64 rounds
 
