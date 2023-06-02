@@ -13,6 +13,9 @@ n - 1 = 696 = 2³ * 87
 
 ist prim
 
+697 ist zumindest zu 75% eine primzahl
+697 ist zu maximal 25% eine zusammengesetzte Zahl
+
 b)
 n = 697, a_1 = 132, a_2 = 355, a_3 = 383, a_4 = 202, a_5 = 565
 
@@ -64,7 +67,7 @@ Zeugen:
 10⁻⁷ = (1/4)^n     | log
 -7 * log(10) = n * log(1/4)
 (-7*log(10))/log(1/4) = n
-n = 
+n = ...
 
 
 4.)
