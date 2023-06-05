@@ -1,0 +1,77 @@
+1.)
+a.)
+
+p = 47
+g = 5
+a = 14
+b = 9
+
+A = g ^ a mod p
+A = 5 ^ 14 mod 47
+A = 27
+
+
+B = g ^ b mod p
+B = 5 ^ 9 mod 47
+B = 40
+
+b.)
+
+K1 = B ^ a mod p
+K1 = 40 ^ 14 mod 47
+K1 = 34
+
+K2 = A ^ b mod p
+K2 = 27 ^ 9 mod 47
+K2 = 34
+
+
+2.)
+
+e = 2
+E = g ^ e mod p
+E = 5 ^ 2 mod 47
+E = 25
+
+K = E ^ e mod p
+K = 25 ^ 2 mod 57
+K = 14
+
+# Ka = A ^ e mod p
+# Ka = 27 ^ 2 mod 47
+# Ka = 24
+
+# Kb = B ^ e mod p
+# Kb = 24 ^ 2 mod 47
+# Kb = 12
+
+
+3.)
+p = 47
+g = 5
+
+A = 30
+B = 28
+
+4.)
+Eine Safe prime hat die form 2p + 1, wobei p auch eine primzahl ist
+11 da:
+2 * 5 + 1 = 11
+
+5.)
+    /* Elliptic Curve Groups (ECDHE) */
+    secp256r1(0x0017), secp384r1(0x0018), secp521r1(0x0019),
+    x25519(0x001D), x448(0x001E),
+
+    /* Finite Field Groups (DHE) */
+    ffdhe2048(0x0100), ffdhe3072(0x0101), ffdhe4096(0x0102),
+    ffdhe6144(0x0103), ffdhe8192(0x0104),
+
+    /* Reserved Code Points */
+    ffdhe_private_use(0x01FC..0x01FF),
+    ecdhe_private_use(0xFE00..0xFEFF),
+    (0xFFFF)
+
+    "The primes in these finite field groups are all safe primes"
+
+

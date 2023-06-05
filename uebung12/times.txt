@@ -1,0 +1,4 @@
+
+openssl dhparam 2048 2> sleep.stderr  1,49s user 0,00s system 99% cpu 1,498 total
+openssl dhparam 3072 2> sleep.stderr  41,34s user 0,02s system 99% cpu 41,392 total
+openssl dhparam 4096 2> sleep.stderr  415,78s user 0,05s system 99% cpu 6:55,95 total
