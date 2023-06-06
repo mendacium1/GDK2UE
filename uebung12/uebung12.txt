@@ -53,6 +53,8 @@ g = 5
 A = 30
 B = 28
 
+siehe "uebung12.py"
+
 4.)
 Eine Safe prime hat die form 2p + 1, wobei p auch eine primzahl ist
 11 da:
