@@ -49,7 +49,7 @@ while g != 1:
     while r != 1:
         h = 1
         while ggt != 1:
-            h = 2
+            h = random.randint(2, p-1)
             ggt = math.gcd(h, p)
             print(f"h: {h}")
         print(f"r = {h} ^ {int((p-1)/w)} mod {p}")
@@ -69,17 +69,39 @@ print(f"G hat die Ordnung w in Z*p: {g}")
 """
 6.)
 """
-from cryptography.hazmat.backends import default_backend
+"""
 from cryptography.hazmat.primitives import serialization
 from cryptography.hazmat.primitives.asymmetric import dsa
+from cryptography.hazmat.backends import default_backend
+import base64
 
-with open("dsa_param.pem", "rb") as key_file:
-    dsa_key = serialization.load_pem_private_key(
-        key_file.read(),
-        password=None,
-        backend=default_backend()
-    )
-p = dsa_key.parameter_numbers().p
-q = dsa_key.parameter_numbers().q
-g = dsa_key.parameter_numbers().g
 
+
+# load DSA parameters
+dsa_params = serialization.load_pem_parameters(dsa_params_pem, default_backend())
+print(f"p: {dsa_params.parameter_numbers().p}")
+print(f"q: {dsa_params.parameter_numbers().q}")
+print(f"g: {dsa_params.parameter_numbers().g}")
+
+# load private key
+private_key = serialization.load_pem_private_key(private_key_pem, None, default_backend())
+dsa_private_numbers = private_key.private_numbers()
+print(f"x: {dsa_private_numbers.x}")
+
+from cryptography.hazmat.primitives import serialization
+from cryptography.hazmat.primitives.asymmetric import dsa
+from cryptography.hazmat.backends import default_backend
+
+# Load DSA parameters from pem file
+with open('dsa_param.pem', 'rb') as file:
+    dsa_params = serialization.load_pem_parameters(file.read(), backend=default_backend())
+
+# Extract p, q and g
+p = dsa_params.parameter_numbers().p
+q = dsa_params.parameter_numbers().q
+g = dsa_params.parameter_numbers().g
+
+print(f'p: {p}')
+print(f'q: {q}')
+print(f'g: {g}')
+"""

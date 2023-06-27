@@ -1,0 +1,26 @@
+1. 
+    Sig = (r, Sig(m XOR r), Sig(r))             Holen wir vom Generator
+    Sig(r) = (r1, Sig(r XOR r1), Sig(r1))       Holen wir vom Generator
+    Sig(r1) = (r, Sig(r XOR r1), Sig(r))        Schickt Angreifer, funktioniert, da wir eine Nachricht vorausbestimmen haben können
+
+    oder ich bestimme Sig(0) voraus, da Sig(0) = (r, Sig(r), Sig(r)) und das bekomme ich nach einer generatorausgabe
+    
+2.
+    2.py
+3.
+    3.py
+    m = pow(sig, e, n)
+    zufälliges sig wähleni
+
+4.
+    FIPS 186-4 ist ab April 2024 deprecated
+
+    im folgenden is w = omega
+    g^w = (h^((p-1/w))^w = h^(p-1) = 1          (mod p)
+    w könnte die Ordnung von g sein... (oder ein Teiler von w)
+    (Es muss der kleinste Wert sein)
+    w teilt p-1 und ist eine Primzahl
+
+5.
+    5.py
+
